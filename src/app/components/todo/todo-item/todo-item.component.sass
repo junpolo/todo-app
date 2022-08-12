@@ -1,0 +1,64 @@
+.todo-item
+    padding: 7px 0
+    display: flex
+    align-items: baseline
+    position: relative
+
+    &__done
+        color: red
+
+    &__name
+        margin: 0 18px 0 18px
+        width: 100%
+
+    &.is-done
+        color: #97979770
+
+        .delete-btn
+            color: rgb(151, 151, 151)
+        
+    .checkbox-wrapper
+        width: 18px
+
+        &__checkbox
+            position: absolute
+            top: 10px
+            width: 20px
+            height: 20px
+        
+        input[type=checkbox]
+            cursor: pointer
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none
+            outline: 0
+            background-color: #484f59
+            border: 1px solid #2e3238
+            border-radius: 5px
+
+        input[type=checkbox]:checked:after
+            content: "\2713"
+            color: #fff
+            font-weight: bold
+            font-size: 10pt
+            top: -1.5px
+            left: 3.5px
+            position: absolute
+
+
+    .delete-wrapper
+        margin-left: auto
+        width: 18px
+
+        &__btn
+            position: absolute
+            top: 5px
+            font-size: 13pt
+            right: 0
+            cursor: pointer
+            visibility: hidden
+
+    &:hover 
+        .delete-wrapper
+            &__btn
+                visibility: visible !important

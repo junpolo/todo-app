@@ -1,0 +1,9 @@
+<div class="todo-item" [ngClass]="todo.done == true ? 'is-done' : ''">
+    <div class="checkbox-wrapper">
+        <input (change)="toggleStatus(todo)" [checked]="todo.done" type="checkbox" class="checkbox-wrapper__checkbox" name="done">
+    </div>
+    <p class="todo-item__name">{{todo.name}}</p>
+    <div class="delete-wrapper">
+        <fa-icon (click)="deleteTodo(todo)" class="delete-wrapper__btn" [icon]="faTrashCan"></fa-icon>
+    </div>
+</div>

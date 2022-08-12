@@ -1,0 +1,14 @@
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <fa-icon class="form-group__input-icon" [icon]="faAlignLeft"></fa-icon>
+        <input 
+            formControlName="todo"
+            name="name" 
+            type="text" 
+            class="form-control" 
+            placeholder="Add task">
+            <div *ngIf="isSubmitted && todo.invalid">
+                <p *ngIf="todo.errors?.['required']">Enter task</p>
+            </div>
+    </div>
+</form>

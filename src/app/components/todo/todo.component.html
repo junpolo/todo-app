@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <h2>To do</h2>
+        <app-add-todo (onAddTodo)="addTodo($event)"></app-add-todo>
+        <div class="todo-list" *ngIf="todos.length > 0">
+            <app-todo-item
+                (onToggleStatus)="toggleStatus($event)"
+                (onDeleteTodo)="deleteTodo($event)"
+                *ngFor="let todo of todos" [todo]="todo">
+            </app-todo-item>
+        </div>
+    </div>
+</div>
