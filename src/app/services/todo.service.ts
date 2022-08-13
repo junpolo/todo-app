@@ -27,7 +27,7 @@ export class TodoService {
   }
 
   addTodo(todo: Todo): void  {
-    this.todos.push(todo);
+    this.todos.unshift(todo);
     this.updateLocalStorage();
   }
 

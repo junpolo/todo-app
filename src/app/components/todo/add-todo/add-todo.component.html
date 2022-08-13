@@ -1,14 +1,14 @@
 <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'form-error' : (isSubmitted && todo.invalid) || (isSubmitted && todo.value.trim().length === 0)}">
         <fa-icon class="form-group__input-icon" [icon]="faAlignLeft"></fa-icon>
-        <input 
+        <input
             formControlName="todo"
             name="name" 
             type="text" 
             class="form-control" 
             placeholder="Add task">
-            <div *ngIf="isSubmitted && todo.invalid">
-                <p *ngIf="todo.errors?.['required']">Enter task</p>
+            <div *ngIf="(isSubmitted && todo.invalid) || (isSubmitted && todo.value.trim().length === 0)">
+                <p class="form-error__text" *ngIf="todo.errors?.['required'] || todo.value.trim().length === 0">Enter task</p>
             </div>
     </div>
 </form>

@@ -28,10 +28,10 @@ export class AddTodoComponent implements OnInit {
 
   onSubmit(): void {
     this.isSubmitted = true;
-    if(this.addForm.valid){
+    if(this.addForm.valid && this.todo.value.trim().length > 0){
       const newTodo = {
         id: this.generateId(),
-        name: this.todo.value,
+        name: this.todo.value.trim(),
         done: false
       }
 

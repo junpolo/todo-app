@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+$bd-error: #fd5252
+
+body
+    background-color: #202225
+
+    #app-content
+        display: flex
+        justify-content: center
+        align-items: center
+        padding-top: 5rem
+
+    .form-error
+        input
+            border: 1px solid $bd-error !important
+
+        &__text
+            color: $bd-error
+            margin: 0
+            padding: 0
+
+    @media screen and (max-width: 600px)
+        #app-content
+            padding-top: 0
